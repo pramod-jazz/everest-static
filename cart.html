@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <title>Java EE Shopping Cart (Monolithic)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet"   type="text/css" href="cssLayout.css"/>
+<link rel="stylesheet"  type="text/css" href="default.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="global.js"></script>
+	
+	<script>
+    $( document ).ready(function() {
+
+		
+		
+		
+		 $.get( gateway + "catalogitems", function(data, status){
+		 console.log(data._embedded.catalogItems);
+		 $.each(data._embedded.catalogItems, function(i, obj) {
+  //use obj.id and obj.name here, for example:
+
+             $("#appendable-table").append("<tr> <td >" + obj.name +  "</td> <td > " + obj.type + "</td></tr>")
+});
+		 
+        
+    });
+    });
+</script>
+
+</head>
+<body>
+<div th:fragment="header">
+    <!-- this is header -->
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" th:href="@{/}">Home</a>
+            </div>
+        </div>
+    </nav>
+</div>
+<div id="top" class="top">
+    <span ><a><h1  href="index"><p>Java EE Shopping Cart (Monolithic)</p></h1></a></span>
+</div>
+
+    <h2>Cart Item(s)</h2>
+    <table id="appendable-table" >
+        <tr>
+            <th>ITEM NAME</th>
+            <th>ITEM COUNT</th>
+        </tr>
+    
+        <tr>
+            <td><form th:action="@{/catalog}" method="get">
+                <fieldset>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <input type="submit" class="btn btn-lg btn-primary btn-block" value="Catalog"/>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            </td>
+            <td>
+                <form th:action="@{/checkout}" method="get">
+                    <fieldset>
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <input type="submit" class="btn btn-lg btn-primary btn-block" value="Checkout"/>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </td>
+        </tr>
+    </table>
+
+    </body>
+</html>

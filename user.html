@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <title>Java EE Shopping Cart (Monolithic)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/cssLayout.css}"/>
+    <link rel="stylesheet" th:href="@{/default.css}" />
+</head>
+<body>
+<div th:fragment="header">
+    <!-- this is header -->
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" th:href="@{/}">Home</a>
+            </div>
+        </div>
+    </nav>
+</div>
+<div id="top" class="top">
+    <span ><a><h1  href="index"><p>Java EE Shopping Cart (Monolithic)</p></h1></a></span>
+</div>
+
+                <h2>Create User</h2>
+
+
+                <form th:action="@{/user}" method="post">
+                    <fieldset>
+                    <div class="form-group">
+                        <b>Login:</b><input type="text" name="login" id="login" class="form-control input-lg"
+                               placeholder="Login" required="required" autofocus="autofocus"/>
+                    </div>
+                    <div class="form-group">
+                        <b>Password:</b><input type="password" name="password" id="password" class="form-control input-lg"
+                               placeholder="Password" required="required"/>
+                    </div>
+                    <div class="form-group">
+                        <b>Name:</b><input type="text" name="username" id="username" class="form-control input-lg"
+                                           placeholder="UserName" required="required" autofocus="autofocus"/>
+                    </div>
+                    <div class="form-group">
+                        <b>Address Line 1:</b><input type="text" name="address1" id="address1" class="form-control input-lg"
+                                           placeholder="Address Line 1" required="required" autofocus="autofocus"/>
+                    </div>
+                    <div class="form-group">
+                        <b>Address Line 2:</b><input type="text" name="address2" id="address2" class="form-control input-lg"
+                                           placeholder="Address Line 2" required="required" autofocus="autofocus"/>
+                    </div>
+                    <div class="form-group">
+                        <b>City:</b><input type="text" name="city" id="city" class="form-control input-lg"
+                                           placeholder="City" required="required" autofocus="autofocus"/>
+                    </div>
+                    <div class="form-group">
+                        <b>State:</b><input type="text" name="state" id="state" class="form-control input-lg"
+                                           placeholder="State" required="required" autofocus="autofocus"/>
+                    </div>
+                    <div class="form-group">
+                        <b>Zip:</b><input type="text" name="zip" id="zip" class="form-control input-lg"
+                                           placeholder="Zip" required="required" autofocus="autofocus"/>
+                    </div>
+                    <div class="form-group">
+                        <b>Country:</b><input type="text" name="country" id="country" class="form-control input-lg"
+                                           placeholder="Country" required="required" autofocus="autofocus"/>
+                    </div>
+                    <div class="form-group">
+                        <b>Credit Card:</b><input type="number" name="creditcard" id="creditcard" class="form-control input-lg"
+                                           placeholder="Credit Card Number" required="required" autofocus="autofocus"/>
+                    </div>
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <input type="submit" class="btn btn-lg btn-primary btn-block" value="Create User"/>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+
+
+    </body>
+</html>

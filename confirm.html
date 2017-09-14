@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <title>Java EE Shopping Cart (Monolithic)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/cssLayout.css}"/>
+    <link rel="stylesheet" th:href="@{/default.css}" />
+</head>
+<body>
+<div th:fragment="header">
+    <!-- this is header -->
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" th:href="@{/}">Home</a>
+            </div>
+        </div>
+    </nav>
+</div>
+<div id="top" class="top">
+    <span ><a><h1  href="index"><p>Java EE Shopping Cart (Monolithic)</p></h1></a></span>
+</div>
+<fieldset>
+    <div class="form-group">
+        <b>Order Confirmation</b><label th:name="status" th:id="status"  th:text="${status}"></label>
+    </div>
+</fieldset>
+<form th:action="@{/catalog}" method="get">
+    <fieldset>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <input type="submit" class="btn btn-lg btn-primary btn-block" value="Continue Shopping"/>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6">
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+    </body>
+</html>

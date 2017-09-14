@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <title>Java EE Shopping Cart (Monolithic)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/cssLayout.css}"/>
+    <link rel="stylesheet" th:href="@{/default.css}" />
+</head>
+<body>
+<div th:fragment="header">
+    <!-- this is header -->
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" th:href="@{/}">Home</a>
+            </div>
+        </div>
+    </nav>
+</div>
+<div id="top" class="top">
+    <span ><a><h1  href="index"><p>Java EE Shopping Cart (Monolithic)</p></h1></a></span>
+</div>
+
+<h2>Catalog</h2>
+    <table>
+        <tr>
+            <th>NAME</th>
+            <th>TYPE</th>
+        </tr>
+        <tr th:each="catalogItem : ${catalogItems}">
+            <td>
+                <a href="catalog-item.html"
+                   th:href="@{/catalog-item(catalogItemId=${catalogItem.id})}" th:text="${catalogItem.name}"></a>
+            </td>
+            <td th:text="${catalogItem.type}">Item Type</td>
+
+        </tr>
+    </table>
+    </body>
+</html>

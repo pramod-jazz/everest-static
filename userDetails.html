@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <title>Java EE Shopping Cart (Monolithic)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/cssLayout.css}"/>
+    <link rel="stylesheet" th:href="@{/default.css}" />
+</head>
+<body>
+<div th:fragment="header">
+    <!-- this is header -->
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" th:href="@{/}">Home</a>
+            </div>
+        </div>
+    </nav>
+</div>
+<div id="top" class="top">
+    <span ><a><h1  href="index"><p>Java EE Shopping Cart (Monolithic)</p></h1></a></span>
+</div>
+
+<h2>Create User</h2>
+
+
+<form th:action="@{/confirm}" method="post" >
+    <fieldset>
+        <div class="form-group">
+            <b>Login Name:</b><label th:name="login" th:id="login"  th:text="${uzerItem.login}"></label>
+        </div>
+        <div class="form-group">
+            <b>User Name:</b><label th:name="username" th:id="username"  th:text="${uzerItem.username}"></label>
+        </div>
+        <div class="form-group">
+            <b>Address 1:</b><label th:name="address1" th:id="address1"  th:text="${uzerItem.address1}"></label>
+        </div>
+        <div class="form-group">
+            <b>Address 2:</b><label th:name="address2" th:id="address2"  th:text="${uzerItem.address2}"></label>
+        </div>
+        <div class="form-group">
+            <b>City:</b><label th:name="city" th:id="city"  th:text="${uzerItem.city}"></label>
+        </div>
+        <div class="form-group">
+            <b>State:</b><label th:name="state" th:id="state"  th:text="${uzerItem.state}"></label>
+        </div>
+        <div class="form-group">
+            <b>ZIP Code:</b><label th:name="zip" th:id="zip"  th:text="${uzerItem.zip}"></label>
+        </div>
+        <div class="form-group">
+            <b>Country:</b><label th:name="country" th:id="country"  th:text="${uzerItem.country}"></label>
+        </div>
+        <div class="form-group">
+            <b>Credit Card:</b><label th:name="creditcard" th:id="creditcard"  th:text="${uzerItem.creditcard}"></label>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <input type="submit" class="btn btn-lg btn-primary btn-block" value="Confirm and Pay"/>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6">
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+
+</body>
+    <!--<body>-->
+
+        <!--<ui:composition template="./WEB-INF/template.xhtml">-->
+
+            <!--<ui:define name="content">-->
+                <!--<h2>Shipping</h2>-->
+                <!--<h:form>-->
+                    <!--Login name: <h:inputText value="#{uzerItem.login}"/> <p/>-->
+                    <!---->
+                    <!--<h:commandButton value="Show Details" action="checkout" actionListener="#{shipping.findShippingDetail()}"/>-->
+                    <!--<p/>-->
+                    <!---->
+                    <!--<b>Name:</b> #{uzerItem.username} <p/>-->
+                    <!--<b>Address Line 1:</b> #{uzerItem.address1} <p/>-->
+                    <!--<b>Address Line 2:</b> #{uzerItem.address2} <p/>-->
+                    <!--<b>City:</b> #{uzerItem.city} <p/>-->
+                    <!--<b>State:</b> #{uzerItem.state} <p/>-->
+                    <!--<b>Zip:</b> #{uzerItem.zip} <p/>-->
+                    <!--<b>Country:</b> #{uzerItem.country} <p/>-->
+                    <!--<b>Credit Card:</b> #{uzerItem.creditcard} <p/>-->
+
+                    <!--<h:commandButton value="Confirm and Pay" action="confirm" actionListener="#{orderBean.saveOrder()}"/>-->
+                <!--</h:form>-->
+
+            <!--</ui:define>-->
+
+        <!--</ui:composition>-->
+
+    <!--</body>-->
+</html>

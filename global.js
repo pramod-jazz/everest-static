@@ -1,0 +1,1 @@
+var gateway =  "http://gateway-app.app.dev.digifabricpcf.com/";

@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <title>Java EE Shopping Cart (Monolithic)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/cssLayout.css}"/>
+    <link rel="stylesheet" th:href="@{/default.css}" />
+</head>
+<body>
+<div th:fragment="header">
+    <!-- this is header -->
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" th:href="@{/}">Home</a>
+            </div>
+        </div>
+    </nav>
+</div>
+<div id="top" class="top">
+    <span ><a><h1  href="index"><p>Java EE Shopping Cart (Monolithic)</p></h1></a></span>
+</div>
+
+         <h2>Create User Status</h2>
+            <p th:text="${status}">Status</p>
+         <form th:action="@{/catalog}" method="get">
+             <fieldset>
+                 <div class="row">
+                     <div class="col-xs-6 col-sm-6 col-md-6">
+                         <input type="submit" class="btn btn-lg btn-primary btn-block" value="Start Shopping"/>
+                     </div>
+                     <div class="col-xs-6 col-sm-6 col-md-6">
+                     </div>
+                 </div>
+             </fieldset>
+         </form>
+
+         <!--<a th:href="@{/catalog}">Start Shopping</a>-->
+    </body>
+</html>
